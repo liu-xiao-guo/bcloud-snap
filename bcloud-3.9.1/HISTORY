@@ -1,0 +1,344 @@
+v3.9.0 - 2016.11.25
+* 修复各种网络错误 (by @Yufeikang).
+* 修复验证码问题 (by @Yufeikang).
+
+v3.8.2 - 2015.12.25
+* Fixed: failed to get bdstoken (pull#214, by @zhaihj).
+
+v3.8.1 - 2015.9.9
+* Fixed: failed to sign in (pull#177, by @mhohai).
+
+v3.7.2 - 2015.7.5
+* Fixed: margin_left is deprecated in gtk3.12
+* Fixed; shrink left side panel
+* Fixed: ConfirmDialog does not exists
+
+v3.7.1 - 2015.5.16
+* i18n updated
+* Redesign Preferences dialog
+* Update contributor list
+* Fixed: syntax error
+* Support shutdown system automatically
+* Fixed: State has no attribute `DOWNLOADED`
+* Support sync dir
+
+v3.6.1 - 2015.1.10
+* Add `display-avatar` option
+* App logo updated
+* i18n updated
+* Fixed: Gtk.Button.new_from_icon_name() requires two parameters;
+* Fixed: kb -> kB
+
+v3.5.10 - 2014.12.6
+* Fixed: KeyError in SigninDialog
+* Fixed: TypeError, string indices must be integers in SigninDialog
+
+v3.5.9 - 2014.11.26
+* Fixed: check file is empty or not before downloading it
+* Add SIDEBAR class to treeview
+* Fixed: wrong parameter in get_token()
+* Fixed: failed to check isdir option in SharePage
+* remove Gio package
+* i18n updated
+
+v3.5.8 - 2014.11.7
+* Feature: add share-page
+* Feature: support appindicator in Ubuntu Unity desktop
+* Commit database in background
+* i18n updated
+
+v3.5.7 - 2014.10.31
+* Feature: validate filepath
+* Feature: add popup menu in DownloadPage
+* Feature: add "Upload Folders" menu item; https://github.com/LiuLang/bcloud/issues/39
+* Remove deprecated icons; add some new icons
+* Fixed: NameErro, name Status is not defined; validate upload file path, https://github.com/LiuLang/bcloud/issues/70
+* Fixed: NameError: name 'abspath' is not defined in NewFolderDialog
+* Fixed: go-home-symbolic icon is missing in Debian 7
+* Fixed: failed to handle file drop action; https://github.com/LiuLang/bcloud/issues/39
+* Fixed: remove task from upload db when remove-button is clicked
+* i18n updated
+
+v3.5.6 - 2014.10.24
+* Feature: add navigation button to path box; https://github.com/LiuLang/bcloud/pull/74, https://github.com/LiuLang/bcloud/pull/80
+* Feature: support drag and drop in IconWindow
+* Feature: save view mode in IconWindow
+* Feature: show avatar
+* Fixed: show default app_info in popup menu
+* Fixed: failed to load bcloud/bcloud.png; https://github.com/LiuLang/bcloud/pull/78
+* Fixed: TypeError: unknown type(null) in DownloadPage
+* i18n updated
+
+v3.5.5 - 2014.10.17
+* Change url request timeout from 30s to 50s
+* Change log level from DEBUG to INFO
+* Set max downlaod retries to 10
+* Set max segments of download to 10
+* Update icons in IconView in order
+* Set connection timeout to 60s by default
+* Fixed: TypeError: Argument 1 does not allow None as a value
+* Remvoe test code
+
+v3.5.4 - 2014.10.12
+* Fixed: 'CloudPage' object has not attribute 'on_remove_button_clicked'
+* Fixed: 'App' object has no attribute 'home_page'
+* Fixed: failed to check file downloaded signal
+* Fixed: check task exists in task list
+* Fixed: catch truncate() exception
+* Fixed: emit network-error signal when socket timed out
+* Fixed: type object 'State' has no attribute 'UPLOADING'; reported by @yui133107
+* Fixed: 'NoneType' object has no attribute 'value'
+* Feature: use new UI style in gtk-3.12
+* Feature: Signin Dialog redesigned
+* Feature: replace WAP API with passport API
+* Feature: use single thread when downloading small files
+* Add log module
+* Simplify download speed calculation
+* Redesign download speed label
+* Support Linut Mint 17
+* Not work with Ubuntu 12.04 any more
+* Using PKCS1_v1_5 as RSA encrypt method
+* i18n updated
+
+v3.5.3 - 2014.10.7
+* Fixed: modify file handler mode from `ab` to `rb+`. That's a serious problem!
+* Fixed: average download speed is incorrect; see https://github.com/LiuLang/bcloud/issues/15
+
+v3.5.2 - 2014.10.6
+* Feature: add download-mode option
+* Feature: add upload-mode option
+* Feature: add "Upload to this Folder" menu item
+* Feature: support multiple connetions per download task
+* Code format changed
+* Download manager redesigned
+* Fixed: remove task info when downloading task is removed from task-list
+* Fixed: uncheck remember-password button when keyring module is unavailable
+* Fixed: remove assertion of `ondup`
+* Fixed: catch URLError
+* i18n updated
+
+v3.5.1 - 2014.9.4
+* Automatically restart task when error occurs
+* Fixed: Gdk-WARNING **: gdk_window_set_icon_list: icons too large
+* Expires local cookie cache after 24h
+* Fixed: local variable password referenced before assignment; reported by @rmokerone
+* Fixed: failed to check upload folder; reported by @lilymona
+* Rename filename when downloading
+* Notify user if failed to parse remote download link
+* Support debian 7.5
+* Add classifiers
+* i18n updated
+
+v3.4.2 - 2014.6.23
+* Fixed: failed to check vcodestr in SigninDialog
+
+v3.4.1 - 2014.6.23
+* Update signin process
+* Fixed: sqlite3 has not LIMIT syntax in ubuntu 12.04
+* Disable dark theme by default
+* Check RSA module is availabel in old distributiions
+* Set keyring module as optional
+* Support GBK encoding in cloud-download page
+* Fixed: failed to download multiple selected items in treeview
+* i18n updated
+
+v3.3.7 - 2014.5.29
+* Increase downloading chunk size
+* Check local file size
+* FIxed: local file is removed after downloading
+* Fixed: TypeError: 'pixbuf' object does not support indexing
+* Fixed: error occurs when adding multiple cloud tasks
+* Fixed: catch binascii.Error: Incorrect padding exception
+* Discard auth cache if current user password is modified
+
+v3.3.6 - 2014.5.15
+* Support RSA encryption
+* Show MegaBytes in DownloadPage
+* Add dark-theme switch
+* Fixed: dlink not in pcs_file
+* Fixed: tooltip of filelist in CloudPage error
+* i18n updated
+
+v3.3.5 - 2014.5.8
+* Handle cloud error code
+* Control buttons are redesigned
+* Fixed: TypeError: load() takes 2 positional argumenst but 3 were given; found by @ly0
+* Fixed: AttributeError: 'IconWindow' object has no attribute 'filelist'
+* Support downloading multiple cloud tasks; adviced by @nanpuyue
+* Using local auth cache only if this account is allowed to signin automatically.
+* Add reload button to FolderBrowserDialog
+* i18n updated
+
+v3.3.4 - 2014.5.1
+* Fixed: 'uploadPage' object has no attribute 'reload'
+* Fixed: escape special HTML chars in password; reported by @zhoujy
+* pypy -> bypy; reported by @hot123tea123
+* Set Uploader/Downloader as daemon
+* Support uploading hidden files option
+* Fixed: loading UNKNOWN icon
+* Fixed: check image is intact before loading
+* Fixed: check themed icon is not None; reported by @fclucky777
+* Add loading spin to TrashPage and CloudPage
+* Delete outdated information
+* Set background thread as Daemon
+* Split a large file(512M~10G) to 1000 pieces
+* i18n updated
+
+v3.3.3 - 2014.4.17
+* Call App.quit explicitly
+* Fixed: VCodeDialog response type error
+* Fixed: FS_ID not match in Downloader
+* Fixed: DownloadPage has no attribute `toast`
+* Fixed: Information in properties dialog does not match with its contents
+* Fixed: Check meta status before downloading
+* Add loading spinner to pages
+* Add similar projects
+* Scan downloading tasks in the last process
+* i18n updated
+
+v3.3.2 - 2014.4.15
+* Rewrite Downloader to accelerate downloading speed
+* Fixed: check row is not None
+* Show downloading speed
+
+v3.3.1 - 2014.4.15
+* Remove all debug info
+* Explicitly destroy DownloadPage and UploadPage
+* Fixed: status icon disappears after preferences dialog destroyed
+* Automatically adjust uploading slice size based on file size
+* Uploading slice size option removed from Preferences dialog
+* Fixed: Saving uploading/downloading status of current user before loggint out
+* Fixed: Check video streaming status before loading with player
+* Fixed: NameError global name `dbus` is not defined
+* Store downloading status to database
+* Automatically migrate tasks to new tables
+
+v3.2.1 - 2014.4.14
+* Fixed: catch dbus.exception.DBusExceptions when query user password from keyring
+* Automatically flush to disk when downloading files
+* Support sorting and DnD
+* Show error message in CloudPage
+* Fixed: show vcode dialog in cloud_add_link_task()
+* Support natural sorting
+* Fixed: automatically reload CloudPage after a task is added
+* Add List View
+* Add tooltips
+* Specify default button in dialogs
+* More symbolic icons added
+* i18n updated
+
+v3.1.3 - 2014.4.12
+* Support Streaming mode, making it faster to open video files
+* i18n updated
+
+v3.1.2 - 2014.4.11
+* Fixed: seek file to last position before resuming uploading
+* Add `Pause Downloading/Uploading Tasks` menu item
+* Support Traditional Chinese(zh_TW)
+
+v3.1.1 - 2014.4.10
+* Fixed: switch to home page when a new account signed in
+* Fixed: IndexError: could not find tree path
+* Fixed: KeyError: 'upload-threshold'
+* Fixed: Unable to convert from gint to glong; reported by @bcsflilong
+* Set `notify` and `keyring` modules as essential
+* Support slice uploading
+* Support downloading/uploading folders
+* Fixed: unescape uri; reported by @eexpress
+* Add 15px to left margin of nav window
+* Support folder properties
+* Support sorting and DnD in DownloadPage/UploadPage
+* Drop file to application window to upload
+* Enable local authorization cache
+* Support pause/remove uploading tasks
+* Dump downloading task first
+
+v2.2.5 - 2014.4.6
+* Fixed: save download status while destroying main window
+* Fixed: gettext is overrided to string
+* SharePage/InBoxPage removed
+* Wrapping path box with a ScrolledWindow
+* Add a Create Foldr button to Folder Browser Dialog
+* Automatically load next page when scrolling down to bottom of window
+* Support new type of signin verification code
+* AppChooserDilalog added
+* i18n updated
+
+v2.2.4 - 2014.4.4
+* Fixed: check tree path exists before updating liststore
+* Support opensuse 13
+* Support ubuntu 12.04
+* Wrapping grid with a scrolled window
+* Fixed: save profile after it is modified
+* Fixed: show preferences dialog only if someone has logged in
+* Automatically dump download tasks in background
+* Fixed: AttributeError: 'FileIcon' object has no attribute 'get_names'; reported by @ahwad
+* unknown.png added
+
+v2.2.3 - 2014.3.26
+* Fixed: saving download status when terminated
+* Automatically update user profile
+* Support restroing files in Trash
+* Add more comments to README
+
+v2.2.2 - 2014.3.26
+* Using keyring to encrypt account password
+* Support status icon
+* i18n updated
+
+v2.2.1 - 2014.3.26
+* Fixed: Python int too long to convert to C long; reported by @youzhiyili
+* Using Gtk3 dark theme
+* Fixed: hide signin dialog
+* Assemble symbolic icons
+* Support Gtk3.4.2
+* Fixed: iteration RuntimeError
+* encoding username; bug reported by @eagle5678
+* Add blink font style
+* Fixed: divided by zero
+* Cache authorization information
+* Support uploading files
+* Fixed: show file chooser dialog when downloading magent files
+* tmp dir changed
+* Logo redesigned
+* Fixed: delete workers from pool after it is paused/stoped
+* Fixed: resume download task from last status
+* Signin dialog supports vertification code
+* Fixed: TypeError: Label constructor cannot be used to create instances of a subclass LeftLabel
+* i18n updated
+
+v2.1.4 - 2014.3.22
+* Replacing MenuItem default constructor with .new_with_label()
+* Support PyGObject 3.11
+* Support Ubuntu 14.04
+* Move http request to background threads
+* Support private links like thunder and qqdl
+* Automatically download next task
+* i18n updated
+
+
+v2.1.3 - 2014.3.21
+* set password invisible
+* remove auth cache
+* support sign out
+* Fixed: check tree_iter is not None
+* launch video players in background
+* update icons
+
+v2.1.2 - 2014.3.20
+* Fixed: check profile info before load pages
+* Fixed: check user cache folder before saving auth.json
+
+v2.1 - 2014.3.20
+* Rename this project to bcloud because of package name conflict
+
+v1.1 - 2014.3.20
+* i18n added
+* auth.json moved to user cache folder
+* add_cloud_bt_task() added
+* icons added
+* Replace HTTPConnection with urllib3
+* cloud download added
+* Redesign download manager
+* Search added
+* Trash page added

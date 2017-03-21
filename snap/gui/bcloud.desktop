@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Terminal=false
+Exec=bcloud
+Name=Baidu Cloud
+Icon=${SNAP}/meta/gui/icon.png

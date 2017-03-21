@@ -1,0 +1,55 @@
+name: bcloud 
+version: '0.1' 
+summary: bcloud
+description: |
+  This is baidu cloud snap applicaton.
+
+grade: stable
+confinement: devmode
+
+apps:
+  bcloud:
+    command: desktop-launch $SNAP/bin/bcloud-gui
+    plugs:
+      - network
+      - unity7
+      - x11
+      - home
+      - opengl
+      - pulseaudio
+
+parts:
+  app:
+    source: ./bcloud-3.9.1
+    plugin: python3
+    stage-packages:
+      - libcanberra-gtk3-module
+      - python3-gi
+      - python3-click
+      - python3-gi-cairo
+      - python3-cairo
+      - gir1.2-gtk-3.0
+      - python-software-properties
+      - software-properties-gtk
+      - python3-pykde4
+      - gir1.2-gnomekeyring-1.0
+      - gir1.2-notify-0.7
+      - gnome-icon-theme-symbolic
+      - libgtk-3-0
+      - libnotify4
+      - notification-daemon
+      - python3-crypto
+      - python3-dbus
+      - python3-pyinotify
+      - python3-keyring
+      - python3-lxml
+      - python-gobject-2
+      - python3-pkg-resources
+      - python3-psutil
+      - dconf-cli
+      - python3-cssselect
+      - fonts-wqy-zenhei
+      - fcitx-frontend-gtk3
+      - gir1.2-appindicator3-0.1
+    after: [desktop-gtk3]
+    
